@@ -1,59 +1,104 @@
-# RealtimeTaskManager
+🇬🇧 English
+Realtime Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+A web application for managing tasks, built with Angular. It supports creating, editing, deleting, filtering, and drag-and-drop between columns. Authentication and real-time updates via WebSockets are planned.
 
-## Development server
+Features
+Create, edit, and delete tasks
 
-To start a local development server, run:
+Filter tasks by status and title
 
-```bash
+Drag & drop tasks between columns
+
+Edit tasks in a modal window
+
+Responsive layout
+
+Uses Angular standalone components
+
+🔜 Coming soon: authentication and real-time updates via WebSockets
+
+Getting Started
+Install dependencies:
+
+bash
+Copy
+Edit
+npm install
+Start the development server:
+
+bash
+Copy
+Edit
 ng serve
-```
+Open your browser at http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Project Structure
+components: reusable UI components (TaskForm, TaskList)
 
-## Code scaffolding
+pages: main pages (Home)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+core: services (TaskService, WebSocketService)
 
-```bash
-ng generate component component-name
-```
+models: interfaces (Task model)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Build
+To build the project for production:
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+bash
+Copy
+Edit
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+🇩🇪 Deutsch
+Realtime Task Manager
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Eine Webanwendung zur Aufgabenverwaltung, entwickelt mit Angular. Sie unterstützt das Erstellen, Bearbeiten, Löschen, Filtern und das Verschieben von Aufgaben per Drag & Drop. Geplant sind Authentifizierung und Echtzeit-Aktualisierung über WebSockets.
 
-```bash
-ng test
-```
+Funktionen
+Aufgaben erstellen, bearbeiten und löschen
 
-## Running end-to-end tests
+Filtern nach Status und Titel
 
-For end-to-end (e2e) testing, run:
+Aufgaben per Drag & Drop zwischen Spalten verschieben
 
-```bash
-ng e2e
-```
+Bearbeiten im Modal-Fenster
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Responsives Design
 
-## Additional Resources
+Verwendung von Angular Standalone-Komponenten
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🔜 Demnächst: Authentifizierung und Echtzeit-Updates über WebSockets
+
+Schnellstart
+Abhängigkeiten installieren:
+
+bash
+Copy
+Edit
+npm install
+Entwicklungsserver starten:
+
+bash
+Copy
+Edit
+ng serve
+Im Browser öffnen: http://localhost:4200
+
+Projektstruktur
+components: wiederverwendbare UI-Komponenten (TaskForm, TaskList)
+
+pages: Hauptseiten (Home)
+
+core: Services (TaskService, WebSocketService)
+
+models: Schnittstellen (Task-Modell)
+
+Build
+Für den Produktions-Build:
+
+bash
+Copy
+Edit
+ng build
