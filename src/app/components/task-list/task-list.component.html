@@ -1,0 +1,17 @@
+<div class="task-list">
+    <div *ngFor="let task of tasks" class="task-item">
+      <div class="task">
+        <div class="task-content">
+          <div class="task-info">
+            <strong>{{ task.title }}</strong> – {{ task.status }}
+            <p *ngIf="task.description">{{ task.description }}</p>
+          </div>
+          <div class="task-actions">
+            <button (click)="onEdit(task)">✏️</button>
+            <button (click)="onDelete(task.id)">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

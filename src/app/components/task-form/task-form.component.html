@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Titel:
+      <input formControlName="title" />
+    </label>
+  
+    <label>
+      Beschreibung:
+      <textarea formControlName="description"></textarea>
+    </label>
+  
+    <label>
+      Status:
+      <select formControlName="status">
+        <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+      </select>
+    </label>
+  
+    <button type="submit">
+        {{ task ? 'Speichern' : 'Hinzufügen' }}
+      </button>
+      
+  </form>
+  

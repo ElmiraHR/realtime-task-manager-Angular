@@ -1,0 +1,100 @@
+<h2>Neue Aufgabe erstellen</h2>
+<app-task-form (taskCreated)="onTaskCreated($event)"></app-task-form>
+
+<h2>Deine Aufgaben</h2>
+
+<!-- Фильтры -->
+<div class="filters">
+  <label>
+    Status:
+    <select [(ngModel)]="statusFilter" (ngModelChange)="onFilterChange()">
+      <option value="all">Alle</option>
+      <option value="todo">Todo</option>
+      <option value="in-progress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+  </label>
+
+  <label>
+    Titel:
+    <input type="text" [(ngModel)]="titleFilter" (ngModelChange)="onFilterChange()" placeholder="Suchen..." />
+  </label>
+</div>
+
+<!-- Столбцы задач -->
+<div class="columns">
+    <!-- TODO -->
+    <div
+      class="column"
+      cdkDropList
+      [cdkDropListData]="todoTasks"
+      [cdkDropListConnectedTo]="['inProgressList', 'doneList']"
+      (cdkDropListDropped)="drop($event, 'todo')"
+      id="todoList"
+    >
+      <h3>📌 To Do</h3>
+      <div *ngFor="let task of todoTasks" cdkDrag>
+        <app-task-list
+          [tasks]="[task]"
+          (delete)="onDeleteTask($event)"
+          (edit)="openEditModal($event)">
+        </app-task-list>
+      </div>
+    </div>
+  
+    <!-- In Progress -->
+    <div
+      class="column"
+      cdkDropList
+      [cdkDropListData]="inProgressTasks"
+      [cdkDropListConnectedTo]="['todoList', 'doneList']"
+      (cdkDropListDropped)="drop($event, 'in-progress')"
+      id="inProgressList"
+    >
+      <h3>🔄 In Progress</h3>
+      <div *ngFor="let task of inProgressTasks" cdkDrag>
+        <app-task-list
+          [tasks]="[task]"
+          (delete)="onDeleteTask($event)"
+          (edit)="openEditModal($event)">
+        </app-task-list>
+      </div>
+    </div>
+  
+    <!-- Done -->
+    <div
+      class="column"
+      cdkDropList
+      [cdkDropListData]="doneTasks"
+      [cdkDropListConnectedTo]="['todoList', 'inProgressList']"
+      (cdkDropListDropped)="drop($event, 'done')"
+      id="doneList"
+    >
+      <h3>✅ Done</h3>
+      <div *ngFor="let task of doneTasks" cdkDrag>
+        <app-task-list
+          [tasks]="[task]"
+          (delete)="onDeleteTask($event)"
+          (edit)="openEditModal($event)">
+        </app-task-list>
+      </div>
+    </div>
+  </div>
+  <!-- Модальное окно редактирования -->
+  <div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal">
+      <h2>Aufgabe bearbeiten</h2>
+  
+      <app-task-form
+        [task]="editedTask"
+        (taskCreated)="onTaskEdited($event)">
+      </app-task-form>
+  
+      <div class="modal-actions">
+        <button class="btn cancel" (click)="closeModal()"> Schließen</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  

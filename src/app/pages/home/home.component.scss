@@ -1,0 +1,101 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  .columns {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  
+  .column {
+    flex: 1;
+    background-color: #0e1a2b;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  
+  /* В home.component.scss */
+.cdk-drag {
+    cursor: move;
+    user-select: none;
+    margin-bottom: 10px;
+    background-color: #1a273a;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #6c8aa7;
+    padding: 24px;
+    border-radius: 8px;
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  button.btn.cancel {
+    background-color: #b1c7db;
+    margin: 0 auto;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button.btn.cancel:hover {
+    background-color: #ddd;
+  }
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .column {
+    flex: 1 1 30%;
+    min-width: 280px;
+    background-color: #596e87;
+    padding: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
